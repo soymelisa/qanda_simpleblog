@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import faker from 'faker'; 
-// import './index.css';
-// import App from './App';
+import faker from 'faker';  
 import * as serviceWorker from './serviceWorker';
 
 import CommentDetail from './CommentDetail';
@@ -10,23 +8,33 @@ import ApprovalCard from './ApprovalCard';
 
 const App = () => {
     return (
-    <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar" src={faker.image.avatar}/>
-        </a>
+      <div className="ui container comments">
+        <ApprovalCard>
+          <CommentDetail 
+            author="Melisa" 
+            timeAgo="Sábado por la noche" 
+            text="ya no voy a hacer tonterías"
+            avatar={ faker.image.avatar() }
+          />
+        </ApprovalCard>
+        
+        <ApprovalCard>
+          <CommentDetail 
+            author="Beto" 
+            timeAgo="Domingo por la mañana" 
+            text="está bien levantarse tarde un día"
+            avatar={ faker.image.avatar() }
+            />
+        </ApprovalCard>
+        <ApprovalCard>
+          <CommentDetail 
+            author="Oscar" 
+            timeAgo="Hace dos semanas" 
+            text="cuál debe ser el ahorro promedio para una franquicia"
+            avatar={ faker.image.avatar() }
 
-        <div className="content">
-          <a href="/" className="author">Sam
-          </a>
-          <div className="metadata">
-            <span className="date">
-              Hoy a las 6:00pm
-            </span>
-          </div>
-          <div className="text">post equis de prueba :)</div>
-        </div>
-      </div>
+            /> 
+        </ApprovalCard>
       </div>
     );
 };
